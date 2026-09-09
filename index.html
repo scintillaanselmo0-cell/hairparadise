@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hair Paradise — Parrucchieri al Vomero, Napoli | Taglio, Colore, Nashi Argan</title>
+  <meta name="description" content="Salone di parrucchieri al Vomero, Napoli. Taglio, colore, schiariture e trattamenti Nashi Argan e Matrix. Prenota su WhatsApp. Via Adolfo Omodeo 53-55." />
+  <link rel="canonical" href="https://hairparadise-vomero.it/" />
+  <meta name="theme-color" content="#241C16" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:site_name" content="Hair Paradise" />
+  <meta property="og:title" content="Hair Paradise — Parrucchieri al Vomero, Napoli" />
+  <meta property="og:description" content="Taglio, colore, schiariture e trattamenti Nashi Argan e Matrix. Un salone dove marmo, luce e cura si incontrano. Prenota su WhatsApp." />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hair Paradise — Parrucchieri al Vomero, Napoli" />
+  <meta name="twitter:description" content="Taglio, colore e cura in un salone che sembra il futuro. Vomero, Napoli." />
+  <meta name="twitter:image" content="assets/img/og-cover.jpg" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Anteprima immagine LCP -->
+  <link rel="preload" as="image" href="assets/img/hero-poster.webp" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/img/logo.png" />
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="#hero" aria-label="Hair Paradise — home">
+        <img class="brand-mark" src="assets/img/logo.png" alt="" width="560" height="519" />
+        <span class="brand-name">Hair Paradise</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigazione principale">
+        <a href="#servizi">Servizi</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#team">Team</a>
+        <a href="#storia">Storia</a>
+        <a href="#contatti">Contatti</a>
+        <a class="btn btn-nav" href="#prenota" data-book>Prenota</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri il menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <nav aria-label="Navigazione mobile">
+        <a href="#servizi">Servizi</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#team">Team</a>
+        <a href="#storia">Storia</a>
+        <a href="#contatti">Contatti</a>
+        <a class="btn btn-block" href="#prenota" data-book>Prenota un appuntamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-media">
+        <img class="hero-poster" src="assets/img/hero-poster.webp" alt="" width="480" height="854" fetchpriority="high" />
+        <video class="hero-video" id="heroVideo" muted loop playsinline preload="none"
+               poster="assets/img/hero-poster.webp" aria-hidden="true">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-scrim"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-logo">
+          <img src="assets/img/logo-light.png" alt="Hair Paradise — Parrucchieri al Vomero, Napoli" width="560" height="519" />
+        </h1>
+        <p class="hero-tagline" data-tagline></p>
+        <p class="hero-sub" data-subtagline></p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#prenota" data-book>Prenota il tuo appuntamento</a>
+          <a class="btn btn-ghost-light" href="#servizi">Scopri i servizi</a>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#manifesto" aria-label="Scorri verso il basso">
+        <span class="ring"></span>
+      </a>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-h">
+      <div class="wrap manifesto-inner">
+        <span class="ring-mark" aria-hidden="true"></span>
+        <p class="manifesto-quote" id="manifesto-h" data-manifesto></p>
+        <p class="manifesto-by">Hair Paradise · Vomero, Napoli</p>
+      </div>
+    </section>
+
+    <!-- ============ SERVIZI ============ -->
+    <section class="section services" id="servizi" aria-labelledby="servizi-h">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-kicker">Il listino</p>
+          <h2 class="section-title" id="servizi-h">Servizi &amp; trattamenti</h2>
+        </header>
+        <div class="services-grid" data-services></div>
+        <p class="services-note" data-services-note></p>
+      </div>
+    </section>
+
+    <!-- ============ GALLERIA ============ -->
+    <section class="section gallery" id="galleria" aria-labelledby="galleria-h">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-kicker">Il luogo &amp; il lavoro</p>
+          <h2 class="section-title" id="galleria-h">Uno sguardo dentro il salone</h2>
+        </header>
+        <div class="gallery-grid" data-gallery></div>
+      </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="section team" id="team" aria-labelledby="team-h">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-kicker">Le mani</p>
+          <h2 class="section-title" id="team-h">Chi si prende cura di te</h2>
+        </header>
+        <div class="team-grid" data-team></div>
+        <p class="team-extra" data-team-extra></p>
+      </div>
+    </section>
+
+    <!-- ============ STORIA / ABOUT ============ -->
+    <section class="section story" id="storia" aria-labelledby="storia-h">
+      <div class="wrap story-inner">
+        <figure class="story-figure">
+          <img data-about-img alt="Interno del salone Hair Paradise" loading="lazy" decoding="async" />
+        </figure>
+        <div class="story-text">
+          <p class="section-kicker">Dal 2007</p>
+          <h2 class="section-title" id="storia-h" data-about-title></h2>
+          <div data-about-body></div>
+          <p class="story-brands" data-brands></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRENOTA ============ -->
+    <section class="section booking" id="prenota" aria-labelledby="prenota-h">
+      <div class="wrap booking-inner">
+        <div class="booking-intro">
+          <p class="section-kicker">Prenota</p>
+          <h2 class="section-title" id="prenota-h">Fissa il tuo appuntamento</h2>
+          <p class="booking-lead">Compila i campi: apriremo WhatsApp con il messaggio già pronto. Ti basterà premere invio — la conferma dell’orario arriva direttamente in chat.</p>
+          <ul class="booking-contacts" data-quickcontacts></ul>
+        </div>
+
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="bk-nome">Nome e cognome</label>
+            <input type="text" id="bk-nome" name="nome" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="bk-servizio">Servizio</label>
+            <select id="bk-servizio" name="servizio" required></select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bk-data">Data</label>
+              <input type="date" id="bk-data" name="data" required />
+            </div>
+            <div class="field">
+              <label for="bk-orario">Orario</label>
+              <select id="bk-orario" name="orario" required></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bk-parrucchiere">Parrucchiere <span class="opt">(facoltativo)</span></label>
+            <select id="bk-parrucchiere" name="parrucchiere"></select>
+          </div>
+
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-gold btn-block">Invia richiesta su WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CONTATTI ============ -->
+    <section class="section contact" id="contatti" aria-labelledby="contatti-h">
+      <div class="wrap contact-inner">
+        <div class="contact-info">
+          <header class="section-head">
+            <p class="section-kicker">Dove siamo</p>
+            <h2 class="section-title" id="contatti-h">Vieni a trovarci</h2>
+          </header>
+
+          <div class="contact-block">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2c-3.9 0-7 3.1-7 7 0 5 7 13 7 13s7-8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            </span>
+            <p><a data-address-link target="_blank" rel="noopener"><span data-address></span></a></p>
+          </div>
+
+          <div class="contact-block">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 8a4 4 0 0 0-4 4h1.5A2.5 2.5 0 0 1 12 9.5zm0-3.5A7.5 7.5 0 0 0 4.5 12H6A6 6 0 0 1 12 6zM12 2v2a8 8 0 0 1 8 8h2a10 10 0 0 0-10-10z" opacity=".0"/><path fill="currentColor" d="M11.5 12.5a11 11 0 0 1-1-1 .8.8 0 0 1 .05-1.1l1.1-1.1a.9.9 0 0 0 .2-1L11 4.5a.9.9 0 0 0-1-.5l-3 .6a1 1 0 0 0-.78.95C6.1 13.6 10.4 17.9 18.4 17.8a1 1 0 0 0 .95-.78l.6-3a.9.9 0 0 0-.5-1l-2.8-.95a.9.9 0 0 0-1 .2l-1.1 1.1a.8.8 0 0 1-1.1.05c-.36-.3-.72-.62-1.05-.97z"/></svg>
+            </span>
+            <div class="contact-lines">
+              <p><a data-phone-link></a> <span class="muted">· fisso</span></p>
+              <p><a data-wa-link target="_blank" rel="noopener"></a> <span class="muted">· WhatsApp</span></p>
+            </div>
+          </div>
+
+          <div class="contact-block">
+            <span class="contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5 3 .75-1.2-4.25-2.55z"/></svg>
+            </span>
+            <div class="contact-lines">
+              <p class="open-status" data-openstatus></p>
+              <ul class="hours-list" data-hours></ul>
+            </div>
+          </div>
+
+          <ul class="social-row" data-socials aria-label="Seguici sui social"></ul>
+        </div>
+
+        <div class="contact-map">
+          <iframe title="Mappa: Hair Paradise, Via Adolfo Omodeo 53-55, Napoli"
+                  data-map loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img class="footer-logo" src="assets/img/logo-light.png" alt="Hair Paradise" width="560" height="519" loading="lazy" />
+      <div class="footer-cols">
+        <div>
+          <p class="footer-h">Hair Paradise</p>
+          <p class="muted-light" data-address-foot></p>
+          <p class="muted-light" data-claim-foot></p>
+        </div>
+        <div>
+          <p class="footer-h">Contatti</p>
+          <p><a class="footer-a" data-phone-foot></a></p>
+          <p><a class="footer-a" data-wa-foot target="_blank" rel="noopener"></a></p>
+        </div>
+        <div>
+          <p class="footer-h">Seguici</p>
+          <ul class="social-row social-row--foot" data-socials-foot></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-copyright></p>
+    </div>
+  </footer>
+
+  <!-- ============ BARRA STICKY MOBILE ============ -->
+  <div class="sticky-bar" id="stickyBar">
+    <a class="sb-ico" data-phone-link aria-label="Chiama">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M11.5 12.5a11 11 0 0 1-1-1 .8.8 0 0 1 .05-1.1l1.1-1.1a.9.9 0 0 0 .2-1L11 4.5a.9.9 0 0 0-1-.5l-3 .6a1 1 0 0 0-.78.95C6.1 13.6 10.4 17.9 18.4 17.8a1 1 0 0 0 .95-.78l.6-3a.9.9 0 0 0-.5-1l-2.8-.95a.9.9 0 0 0-1 .2l-1.1 1.1a.8.8 0 0 1-1.1.05c-.36-.3-.72-.62-1.05-.97z"/></svg>
+    </a>
+    <a class="sb-ico" data-wa-link target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1 3.6 3.7-1A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.2.6.6-2.1-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.24-.12-1.4-.7-1.6-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06a6.5 6.5 0 0 1-1.9-1.18 7.2 7.2 0 0 1-1.32-1.64c-.14-.24 0-.36.1-.48.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.4-.57 1.6-1.13.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+    </a>
+    <a class="btn btn-gold sb-book" href="#prenota" data-book>Prenota</a>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Chiudi">&times;</button>
+    <img class="lb-img" id="lbImg" alt="" />
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
