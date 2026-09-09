@@ -21,7 +21,6 @@
   var setText = function (sel, txt) { $$(sel).forEach(function (el) { el.textContent = txt; }); };
   setText("[data-tagline]", D.business.tagline);
   setText("[data-subtagline]", D.business.subtagline);
-  setText("[data-manifesto]", D.content.manifesto);
   setText("[data-year]", new Date().getFullYear());
   setText("[data-claim-foot]", D.business.claim);
   (function () {

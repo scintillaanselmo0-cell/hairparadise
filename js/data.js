@@ -135,16 +135,12 @@ window.HP = {
      Sostituisci pure con le tue foto: mantieni le proporzioni indicate. */
   gallery: [
     { src: "assets/img/salone-a.webp", small: "assets/img/salone-a-540.webp", w: 1080, h: 608, alt: "La sala principale di Hair Paradise, tra marmo e cromo" },
-    { src: "assets/img/lavoro-styling.webp", small: "", w: 480, h: 854, alt: "Styling e messa in piega su capelli biondi" },
     { src: "assets/img/salone-b.webp", small: "assets/img/salone-b-540.webp", w: 1080, h: 744, alt: "La reception e l’area accoglienza del salone" },
-    { src: "assets/img/dettaglio-emblema.webp", small: "", w: 480, h: 854, alt: "L’emblema Hair Paradise tra sfere cromate e anelli luminosi" },
-    { src: "assets/img/salone-c.webp", small: "assets/img/salone-c-540.webp", w: 1080, h: 712, alt: "Marmo, luce e specchi LED nel salone" },
-    { src: "assets/img/lavoro-piega.webp", small: "", w: 480, h: 854, alt: "La piega curata nei minimi dettagli" }
+    { src: "assets/img/salone-c.webp", small: "assets/img/salone-c-540.webp", w: 1080, h: 712, alt: "Marmo, luce e specchi LED nel salone" }
   ],
 
   /* ---------- MANIFESTO / ABOUT (testi editoriali) ---------- */
   content: {
-    manifesto: "I capelli sono il gioiello più prezioso che si possa indossare. Noi lo trattiamo così.",
     aboutTitle: "Più di un salone. Una famiglia.",
     aboutParagraphs: [
       "Hair Paradise nasce da un sogno coltivato fin da bambino. Nel 2007 Salvatore Esposito apre la sua prima bottega al Vomero; nel 2019, insieme allo studio De Luca Architettura, dà vita al salone di via Omodeo — marmo, luce e linee che sembrano disegnare il futuro.",
