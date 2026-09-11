@@ -49,6 +49,7 @@
       <nav class="nav-desktop" aria-label="Navigazione principale">
         <a href="#servizi">Servizi</a>
         <a href="#galleria">Galleria</a>
+        <a href="#sposa">Sposa</a>
         <a href="#team">Team</a>
         <a href="#storia">Storia</a>
         <a href="#contatti">Contatti</a>
@@ -64,6 +65,7 @@
       <nav aria-label="Navigazione mobile">
         <a href="#servizi">Servizi</a>
         <a href="#galleria">Galleria</a>
+        <a href="#sposa">Sposa</a>
         <a href="#team">Team</a>
         <a href="#storia">Storia</a>
         <a href="#contatti">Contatti</a>
@@ -125,6 +127,27 @@
       </div>
     </section>
 
+    <!-- ============ SPOSA ============ -->
+    <section class="section bridal" id="sposa" aria-labelledby="sposa-h">
+      <div class="wrap bridal-inner">
+        <div class="bridal-media">
+          <figure class="bridal-photo reveal">
+            <img data-bridal-photo alt="" loading="lazy" decoding="async" />
+          </figure>
+          <div class="bridal-clip reveal">
+            <video data-bridal-video muted loop playsinline preload="none" aria-hidden="true"></video>
+          </div>
+        </div>
+        <div class="bridal-text">
+          <p class="section-kicker" data-bridal-kicker></p>
+          <h2 class="section-title" id="sposa-h" data-bridal-title></h2>
+          <p class="bridal-lead" data-bridal-lead></p>
+          <p class="bridal-price"><span class="from">a partire da</span><span data-bridal-price></span></p>
+          <a class="btn btn-gold" href="#prenota" data-book>Prenota la prova sposa</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ TEAM ============ -->
     <section class="section team" id="team" aria-labelledby="team-h">
       <div class="wrap">
@@ -133,7 +156,6 @@
           <h2 class="section-title" id="team-h">Chi si prende cura di te</h2>
         </header>
         <div class="team-grid" data-team></div>
-        <p class="team-extra" data-team-extra></p>
       </div>
     </section>
 

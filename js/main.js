@@ -75,20 +75,64 @@
   /* ---------- TEAM ---------- */
   (function () {
     var host = $("[data-team]");
-    if (host) {
-      host.innerHTML = D.team.members.map(function (m) {
-        var avatar = m.photo
-          ? '<span class="team-avatar"><img src="' + m.photo + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async" /></span>'
-          : '<span class="team-avatar"><span class="team-initials">' + esc(m.initials) + '</span></span>';
-        return '<article class="team-card reveal">' +
-                 avatar +
-                 '<h3 class="team-name">' + esc(m.name) + '</h3>' +
-                 '<p class="team-role">' + esc(m.role) + '</p>' +
-                 '<p class="team-spec">' + esc(m.specialty) + '</p>' +
-               '</article>';
-      }).join("");
+    if (!host) return;
+    var t = D.team;
+    var avatar = function (m) {
+      return m.photo
+        ? '<span class="team-avatar"><img src="' + m.photo + '" alt="' + esc(m.name) + '" loading="lazy" decoding="async" /></span>'
+        : '<span class="team-avatar"><span class="team-initials">' + esc(m.initials || m.name.charAt(0)) + '</span></span>';
+    };
+    var html = "";
+    // Titolare in evidenza
+    if (t.owner) {
+      html += '<article class="team-card team-card--owner reveal">' +
+                avatar(t.owner) +
+                '<h3 class="team-name">' + esc(t.owner.name) + '</h3>' +
+                '<p class="team-role">' + esc(t.owner.role) + '</p>' +
+                (t.owner.specialty ? '<p class="team-spec">' + esc(t.owner.specialty) + '</p>' : '') +
+              '</article>';
     }
-    setText("[data-team-extra]", D.team.extra);
+    // Gruppi
+    (t.groups || []).forEach(function (g) {
+      html += '<div class="team-group">' +
+                '<h3 class="team-group-title">' + esc(g.title) + '</h3>' +
+                '<div class="team-group-grid">' +
+                  g.members.map(function (m) {
+                    return '<article class="team-card reveal">' +
+                             avatar(m) +
+                             '<h4 class="team-name">' + esc(m.name) + '</h4>' +
+                             (m.specialty ? '<p class="team-spec">' + esc(m.specialty) + '</p>' : '') +
+                           '</article>';
+                  }).join("") +
+                '</div>' +
+              '</div>';
+    });
+    host.innerHTML = html;
+  })();
+
+  /* ---------- SPOSA ---------- */
+  (function () {
+    var b = D.bridal;
+    if (!b) return;
+    setText("[data-bridal-kicker]", b.kicker);
+    setText("[data-bridal-title]", b.title);
+    setText("[data-bridal-lead]", b.lead);
+    setText("[data-bridal-price]", euro(b.price));
+    var ph = $("[data-bridal-photo]");
+    if (ph) {
+      ph.src = b.photo;
+      if (b.photoSmall) { ph.srcset = b.photoSmall + " 720w, " + b.photo + " 1440w"; ph.sizes = "(min-width:860px) 58vw, 100vw"; }
+      if (b.photoW) ph.width = b.photoW;
+      if (b.photoH) ph.height = b.photoH;
+      ph.alt = b.photoAlt || "Servizio sposa Hair Paradise";
+    }
+    var v = $("[data-bridal-video]");
+    if (v) {
+      v.poster = b.videoPoster || "";
+      var src = document.createElement("source");
+      src.src = b.video; src.type = "video/mp4";
+      v.appendChild(src);
+    }
   })();
 
   /* ---------- STORIA / ABOUT ---------- */
@@ -211,25 +255,42 @@
     }
   })();
 
-  /* ---------- HERO VIDEO (lazy, rispetta reduced-motion / risparmio dati) ---------- */
+  /* ---------- VIDEO HERO (lazy, rispetta reduced-motion / risparmio dati) ---------- */
   (function () {
-    var v = $("#heroVideo");
-    if (!v) return;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var conn = navigator.connection || {};
     var saveData = conn.saveData === true;
     var slow = conn.effectiveType && /2g/.test(conn.effectiveType);
-    if (reduce || saveData || slow) return; // resta il poster
+    if (reduce || saveData || slow) return; // restano i poster
 
-    var start = function () {
-      v.preload = "auto";
-      v.load();
-      var p = v.play();
-      if (p && p.then) p.catch(function () {});
-      v.addEventListener("playing", function () { v.classList.add("is-ready"); }, { once: true });
-    };
-    if ("requestIdleCallback" in window) requestIdleCallback(start, { timeout: 2500 });
-    else setTimeout(start, 900);
+    // Hero: parte appena possibile
+    var hv = $("#heroVideo");
+    if (hv) {
+      var startHero = function () {
+        hv.preload = "auto"; hv.load();
+        var p = hv.play(); if (p && p.then) p.catch(function () {});
+        hv.addEventListener("playing", function () { hv.classList.add("is-ready"); }, { once: true });
+      };
+      if ("requestIdleCallback" in window) requestIdleCallback(startHero, { timeout: 2500 });
+      else setTimeout(startHero, 900);
+    }
+
+    // Video sposa: parte quando entra in vista, si ferma quando esce
+    var bv = $("[data-bridal-video]");
+    if (bv && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            bv.preload = "auto";
+            var p = bv.play(); if (p && p.then) p.catch(function () {});
+            bv.classList.add("is-ready");
+          } else {
+            bv.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+      io.observe(bv);
+    }
   })();
 
   /* ---------- LIGHTBOX ---------- */
@@ -314,9 +375,12 @@
           '</optgroup>';
       }).join("");
 
-    // Popola parrucchieri
+    // Popola parrucchieri (titolare + tutti i membri dei gruppi)
+    var teamNames = [];
+    if (D.team.owner) teamNames.push(D.team.owner.name);
+    (D.team.groups || []).forEach(function (g) { g.members.forEach(function (m) { teamNames.push(m.name); }); });
     selHair.innerHTML = '<option value="">Nessuna preferenza</option>' +
-      D.team.members.map(function (m) { return '<option>' + esc(m.name) + '</option>'; }).join("");
+      teamNames.map(function (n) { return '<option>' + esc(n) + '</option>'; }).join("");
 
     // Data: no passato
     var pad = function (n) { return (n < 10 ? "0" : "") + n; };
@@ -392,6 +456,7 @@
     });
     var services = [];
     D.services.forEach(function (cat) { cat.items.forEach(function (it) { services.push(it.name); }); });
+    if (D.bridal) services.push("Acconciatura sposa");
     var sameAs = Object.keys(D.socials).map(function (k) { return D.socials[k]; }).filter(Boolean);
 
     var ld = {

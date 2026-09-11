@@ -120,13 +120,42 @@ window.HP = {
      Nessuna foto disponibile: mostriamo eleganti card con iniziali.
      Aggiungi "photo" (es. "assets/img/team-salvatore.webp") quando le hai. */
   team: {
-    members: [
-      { name: "Salvatore Esposito", role: "Titolare & Master Stylist", specialty: "Taglio, colore e consulenza d’immagine", initials: "SE", photo: "" },
-      { name: "Anna",               role: "Hair Stylist",               specialty: "Colore e messa in piega",                 initials: "A",  photo: "" },
-      { name: "Cristina",           role: "Hair Stylist",               specialty: "Styling e acconciature",                  initials: "C",  photo: "" }
-    ],
-    // Riga che cita il resto della squadra
-    extra: "Insieme a Enza, Emanuela, Amalia e a tutto il team di Hair Paradise."
+    // Titolare / fondatore (protagonista anche della sezione Storia)
+    owner: { name: "Salvatore Esposito", role: "Titolare & Master Stylist", specialty: "Taglio, colore e consulenza d’immagine", initials: "SE", photo: "" },
+    // Gruppi di lavoro. Aggiungi "photo" a un membro per sostituire il monogramma.
+    groups: [
+      {
+        title: "Hair Stylist",
+        members: [
+          { name: "Mery",   initials: "M", photo: "" },
+          { name: "Rita",   initials: "R", photo: "" },
+          { name: "Susy",   initials: "S", photo: "" },
+          { name: "Ilenia", initials: "I", photo: "" }
+        ]
+      },
+      {
+        title: "Trucco & Estetica",
+        members: [
+          { name: "Anna",     initials: "A", photo: "" },
+          { name: "Cristina", initials: "C", photo: "" }
+        ]
+      }
+    ]
+  },
+
+  /* ---------- SPOSA ----------
+     Sezione dedicata al servizio sposa (foto + video). */
+  bridal: {
+    kicker: "Servizio sposa",
+    title: "Nel giorno più importante",
+    lead: "Ti accompagniamo dalla prova allo styling finale: acconciatura, trucco e cura, pensati sul tuo abito e sulla tua luce. Un servizio su misura, per te e per chi ti sta accanto.",
+    price: 350,          // a partire da €
+    photo: "assets/img/sposa.webp",
+    photoSmall: "assets/img/sposa-720.webp",
+    photoW: 1440, photoH: 960,
+    photoAlt: "Acconciatura sposa firmata Hair Paradise, ritratto in bianco e nero",
+    video: "assets/video/sposa.mp4",
+    videoPoster: "assets/img/sposa-poster.webp"
   },
 
   /* ---------- GALLERIA ----------

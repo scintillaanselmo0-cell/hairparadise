@@ -21,7 +21,7 @@ Aprilo con un editor di testo e cambia solo i valori. Esempi:
 | Cambiare un **orario** | in `hours` (24h, es. `"08:30"`; `null` = chiuso) |
 | Cambiare **telefono / WhatsApp / indirizzo** | in `contact` |
 | Cambiare i **social** | in `socials` |
-| Aggiungere una **foto del team** | in `team.members`, campo `photo` (es. `"assets/img/team-anna.webp"`) |
+| Aggiungere una **foto del team** | in `team` (dentro `owner` o un membro dei `groups`), campo `photo` |
 | Cambiare le **frasi** (slogan, storia) | in `content` e `business` |
 | Aggiungere la **Partita IVA** | in `business.vat` |
 
